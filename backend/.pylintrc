@@ -1,0 +1,6 @@
+[MASTER]
+disable=C0111
+
+[MESSAGES CONTROL]
+disable=missing-docstring
+
