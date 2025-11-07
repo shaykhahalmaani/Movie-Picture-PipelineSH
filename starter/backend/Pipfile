@@ -1,0 +1,18 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+flask = "*"
+flask-cors = "*"
+
+[dev-packages]
+pytest = "*"
+pylint = "*"
+
+[scripts]
+serve = "python app.py"
+test = "pytest"
+lint = "pylint app.py"
+
