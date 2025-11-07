@@ -13,7 +13,7 @@ Git is trying to use account `77Fayy` but you need to use `shaykhahalmaani` acco
    - Name: `Movie-Picture-Pipeline`
    - Select scopes: Check `repo` (all repo permissions)
    - Click "Generate token"
-   - **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** (you won't see it again!)
+   - **YOUR_TOKEN_HERE** (you won't see it again!)
 
 2. **Push using the token:**
    ```bash
@@ -23,7 +23,7 @@ Git is trying to use account `77Fayy` but you need to use `shaykhahalmaani` acco
    
    When prompted:
    - Username: `shaykhahalmaani`
-   - Password: **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** (not your GitHub password)
+   - Password: **YOUR_TOKEN_HERE** (not your GitHub password)
 
 ### Option 2: Update Git Credentials
 
@@ -54,11 +54,11 @@ git push -u origin main
 
 ```bash
 cd /Users/faialradhi/Shaykha-project4
-git remote set-url origin https://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@github.com/shaykhahalmaani/Movie-Picture-PipelineSH.git
+git remote set-url origin https://YOUR_TOKEN_HERE@github.com/shaykhahalmaani/Movie-Picture-PipelineSH.git
 git push -u origin main
 ```
 
-Replace `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` with your personal access token.
+Replace `YOUR_TOKEN_HERE` with your personal access token.
 
 ## Recommended: Option 1 (Personal Access Token)
 
