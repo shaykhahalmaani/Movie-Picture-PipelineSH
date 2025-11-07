@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths:
-      - 'backend/**'
+      - 'starter/backend/**'
   workflow_dispatch:
 
 jobs:
@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: ./backend
+        working-directory: ./starter/backend
     
     steps:
     - name: Checkout code
@@ -39,7 +39,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: ./backend
+        working-directory: ./starter/backend
     
     steps:
     - name: Checkout code
@@ -65,7 +65,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: ./backend
+        working-directory: ./starter/backend
     
     steps:
     - name: Checkout code
