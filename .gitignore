@@ -1,8 +1,28 @@
 # Dependencies
 node_modules/
+.pnp
+.pnp.js
+
+# Testing
+coverage/
+
+# Production
+build/
+dist/
+
+# Misc
+.DS_Store
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+*.log
 
 # Python
 __pycache__/
@@ -19,21 +39,13 @@ pip-delete-this-directory.txt
 .pytest_cache/
 .coverage
 htmlcov/
-*.egg-info/
-dist/
-build/
-.Pipfile.lock
 
-# Production builds
-frontend/build/
-backend/dist/
-
-# Environment variables
-.env
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
+# Terraform
+*.tfstate
+*.tfstate.*
+*.tfvars
+.terraform/
+.terraform.lock.hcl
 
 # IDE
 .vscode/
@@ -43,21 +55,5 @@ backend/dist/
 *~
 
 # OS
-.DS_Store
 Thumbs.db
-
-# Testing
-coverage/
-.nyc_output/
-
-# Logs
-logs/
-*.log
-
-# Kubernetes
-kubeconfig
-
-# Documentation files (optional to ignore)
-*.docx
-*.pdf
 

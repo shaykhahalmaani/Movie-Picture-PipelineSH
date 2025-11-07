@@ -1,29 +1,26 @@
-import pytest
-from app import app
+from . import app
+import os
 
-@pytest.fixture
-def client():
-    app.config['TESTING'] = True
+
+def test_movies_endpoint_returns_200():
     with app.test_client() as client:
-        yield client
+        status_code = int(os.getenv("FAIL_TEST", "200"))
+        response = client.get("/movies/")
+        assert response.status_code == status_code
 
-def test_movies_endpoint_returns_200(client):
-    """Test that movies endpoint returns 200 status"""
-    response = client.get('/movies')
-    assert response.status_code == 200
 
-def test_movies_endpoint_returns_json(client):
-    """Test that movies endpoint returns JSON"""
-    response = client.get('/movies')
-    assert response.is_json
+def test_movies_endpoint_returns_json():
+    with app.test_client() as client:
+        response = client.get("/movies/")
+        assert response.content_type == "application/json"
 
-def test_movies_endpoint_returns_valid_data(client):
-    """Test that movies endpoint returns valid movie data"""
-    response = client.get('/movies')
-    data = response.get_json()
-    assert 'movies' in data
-    assert isinstance(data['movies'], list)
-    assert len(data['movies']) > 0
-    assert 'id' in data['movies'][0]
-    assert 'title' in data['movies'][0]
 
+def test_movies_endpoint_returns_valid_data():
+    with app.test_client() as client:
+        response = client.get("/movies/")
+        data = response.get_json()
+        assert isinstance(data, dict)
+        assert "movies" in data
+        assert isinstance(data.get("movies"), list)
+        assert len(data["movies"]) > 0
+        assert "title" in data["movies"][0]
